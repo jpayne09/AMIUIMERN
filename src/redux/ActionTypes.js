@@ -1,0 +1,3 @@
+export const ASSETS_LOADING = 'ASSETS_LOADING';
+export const ASSETS_FAILED = 'ASSEtS_FAILED';
+export const ADD_ASSETS = 'ADD_ASSETS';
