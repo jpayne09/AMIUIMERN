@@ -1,9 +1,10 @@
 import * as ActionTypes from './ActionTypes';
+import {baseUrl} from '../shared/baseUrl';
 
 export const fetchAssets = () => dispatch => {
 
     
-    return fetch('http://localhost:3001/list')
+    return fetch(baseUrl + '/list')
         .then(response => {
             return response.json();
           })

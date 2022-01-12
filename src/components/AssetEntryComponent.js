@@ -1,5 +1,6 @@
 import React, { Component, useState, useEffect } from 'react';
 import {  Form, FormGroup, FormFeedback } from 'reactstrap';
+import {baseUrl} from '../shared/baseUrl';
 
 class AssetEntry extends React.Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class AssetEntry extends React.Component {
     handleSubmit(event) {
       alert('A form was submitted: ');
         
-      fetch('http://localhost:3001/list', {
+      fetch(baseUrl + '/list', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
