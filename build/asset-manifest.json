@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2684bf4c.css",
+    "main.js": "/static/js/main.b2d00fe3.js",
+    "static/js/787.5dad50f1.chunk.js": "/static/js/787.5dad50f1.chunk.js",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/fontawesome-webfont.eot": "/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/glyphicons-halflings-regular.svg": "/static/media/glyphicons-halflings-regular.060b2710bdbbe3dfe48b.svg",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/glyphicons-halflings-regular.ttf": "/static/media/glyphicons-halflings-regular.4692b9ec53fd5972caa2.ttf",
+    "static/media/glyphicons-halflings-regular.woff": "/static/media/glyphicons-halflings-regular.82b1212e45a2bc35dd73.woff",
+    "static/media/glyphicons-halflings-regular.eot": "/static/media/glyphicons-halflings-regular.5be1347c682810f199c7.eot",
+    "static/media/glyphicons-halflings-regular.woff2": "/static/media/glyphicons-halflings-regular.be810be3a3e14c682a25.woff2",
+    "index.html": "/index.html",
+    "main.2684bf4c.css.map": "/static/css/main.2684bf4c.css.map",
+    "main.b2d00fe3.js.map": "/static/js/main.b2d00fe3.js.map",
+    "787.5dad50f1.chunk.js.map": "/static/js/787.5dad50f1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2684bf4c.css",
+    "static/js/main.b2d00fe3.js"
+  ]
+}
