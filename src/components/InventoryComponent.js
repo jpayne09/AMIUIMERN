@@ -5,7 +5,8 @@ import AssetInformation from './AssetInfoComponent';
 
 function handleClick(assettag){
     return (
-        window.location = `http://ec2-52-204-9-154.compute-1.amazonaws.com/inventory/${assettag}`
+        window.location = `http://52.204.9.154/inventory/${assettag}`
+        //window.location = `https://localhost:3002/inventory/${assettag}`
         
     )
 }
