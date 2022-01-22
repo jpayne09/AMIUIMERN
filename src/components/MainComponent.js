@@ -16,19 +16,22 @@ const mapStateToProps = (state) => {
     };
 };
 
+/** 
 const mapDispatchToProps = {
     fetchAssets: () => (fetchAssets()),
 
 };
 
+*/
 
 class Main extends Component {
 
 
     componentDidMount() {
-        this.props.fetchAssets();
+        //this.props.fetchAssets();
     }
     render(){
+        console.log("Main component", this.props.assets.assets)
         const assetwithId = ({match}) => {
             return (
                 <AssetInformation 
@@ -42,7 +45,7 @@ class Main extends Component {
                 <Sidenav />
                 <Header />
                 <Switch>
-                    <Route path='/dashboard' render={() => <Dashboard assetData={this.props.assetData} /> }
+                    <Route path='/dashboard' render={() => <Dashboard assetData={this.props.assets.assets} /> }
                     />
                     <Route exact path='/assetentry' component={AssetEntry} />
                     <Route exact path='/inventory' render={() => <FilterTable assetData={this.props.assets} filterText={this.props.filterText} /> } />
@@ -54,5 +57,5 @@ class Main extends Component {
         );
     }
 }
-export default withRouter(connect(mapStateToProps,mapDispatchToProps)(Main));
+export default withRouter(connect(mapStateToProps)(Main));
 //export default Main;

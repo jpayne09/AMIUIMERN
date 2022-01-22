@@ -1,21 +1,15 @@
 import React, { Component } from "react";
-import { Table, Card, CardBody, CardHeader,CardTitle } from 'reactstrap';
-import { Switch, Route, Redirect, withRouter} from 'react-router-dom';
-import AssetInformation from './AssetInfoComponent';
+import { Table, Card, CardBody, CardHeader } from 'reactstrap';
+import { useHistory } from "react-router-dom";
 
-function handleClick(assettag){
-    return (
-        window.location = `http://52.204.9.154/inventory/${assettag}`
-        //window.location = `https://localhost:3002/inventory/${assettag}`
-        
-    )
-}
 
 function RenderInventory({ asset }) {
+    const history = useHistory();
+    const navigateTo = () => history.push(`/inventory/${asset.assettag}`)
 
     return (
         <>
-        <td onClick={values => handleClick(asset.assettag)}>{asset.assettag}</td><td>{asset.serialnumber}</td><td>{asset.Modelinput}</td><td>{asset.Statusinput}</td><td>{asset.AssetName}</td>
+        <td onClick={navigateTo}>{asset.assettag}</td><td>{asset.serialnumber}</td><td>{asset.model}</td><td>{asset.status}</td><td>{asset.AssetName}</td>
             <td>{asset.Supplier}</td><td>{asset.OrderNum}</td><td>{asset.PurchaseDate}</td><td>{asset.PurchaseCost}</td>
         </>
     );
@@ -76,7 +70,6 @@ class FilterTable extends Component{
       }
 
     render(){
-        console.log("filtertable props", this.props.assetData.assets);
         return(
             <div>
                 <SearchBar
@@ -95,12 +88,10 @@ class FilterTable extends Component{
 }
 class Inventory extends Component{
     render(){
-        console.log("Inventory Props", this.props.assetData);
         const filterText = this.props.filterText;
         const inventory = [];
         if(this.props.assetData){
         this.props.assetData.forEach((asset) => {
-            console.log("assettag", asset.assettag);
             if(asset.assettag.indexOf(filterText) === -1){
                 return
             }

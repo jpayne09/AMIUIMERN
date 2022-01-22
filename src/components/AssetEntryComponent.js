@@ -1,5 +1,5 @@
 import React, { Component, useState, useEffect } from 'react';
-import {  Form, FormGroup, FormFeedback } from 'reactstrap';
+import {  Form, FormGroup, FormFeedback, Input } from 'reactstrap';
 import {baseUrl} from '../shared/baseUrl';
 
 class AssetEntry extends React.Component {
@@ -7,7 +7,9 @@ class AssetEntry extends React.Component {
       super(props);
       this.state = {
             assettag: '',
-            serialnumber: ''
+            serialnumber: '',
+            modelinput: '',
+            statusinput: '',
         };
   
       this.handleChange = this.handleChange.bind(this);
@@ -23,7 +25,7 @@ class AssetEntry extends React.Component {
     }
   
     handleSubmit(event) {
-      alert('A form was submitted: ');
+      alert('A form was submitted ');
         
       fetch(baseUrl + '/api/list', {
         method: 'POST',
@@ -32,7 +34,9 @@ class AssetEntry extends React.Component {
         },
         body: JSON.stringify({
             assettag: this.state.assettag,
-            serialnumber: this.state.serialnumber
+            serialnumber: this.state.serialnumber,
+            model : this.state.modelinput,
+            status: this.state.statusinput
         })
       })
 
@@ -46,23 +50,35 @@ class AssetEntry extends React.Component {
                 <div className="form-container">
                     <div className="row">
                         <div className="col-md-12">
-                            <form onSubmit={this.handleSubmit}>
+                            <Form onSubmit={this.handleSubmit}>
                             <FormGroup>
                                 <div className="form-group">
                                 <label>
                                     Asset Tag:
-                                    <input type="text" name="assettag" value={this.state.assettag} onChange={this.handleChange} />
                                 </label>
+                                <input type="text" name="assettag" value={this.state.assettag} onChange={this.handleChange} />
                                 </div>
                                 <div className="form-group">
                                 <label>
-                                    SerialNumber
+                                    SerialNumber:
                                     <input type="text" name="serialnumber" value={this.state.serialnumber} onChange={this.handleChange} />
                                 </label>
                                 </div>
+                                <div className="form-group">
+                                  <label>
+                                    Model:
+                                  </label>
+                                  <input type="text" name="modelinput" value={this.state.modelinput} onChange={this.handleChange} />
+                                </div>
+                                <div className="form-group">
+                                  <label>
+                                    Status:
+                                    <input type="text" name="statusinput" value={this.state.statusinput} onChange={this.handleChange} />
+                                  </label>
+                                </div>
                                 <input type="submit" value="Submit" />
                             </FormGroup>
-                            </form>
+                            </Form>
                         </div>
                     </div>
                 </div>

@@ -1,28 +1,8 @@
 import React, { Component } from 'react';
 import VerticleBar from './VerticleBarComponent';
 import DoughnutChart from './DoughnutComponent';
-import { Card, CardHeader, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
-
-/** 
-function assets(props) {
-    const ifExist = props.assetData;
-    if (ifExist === null) {
-        return '0';
-    } else {
-        return props.assetData.length;
-    }
-}
-
-*/
-    var arrayFromStorage = JSON.parse(localStorage.getItem("test1"));
-    if(arrayFromStorage != null){
-    var arrayLength = arrayFromStorage.length;
-    }else{
-    arrayLength = '0'
-    }
 
 function Dashboard(props) {
-
 
     return (
         //Body
@@ -47,7 +27,7 @@ function Dashboard(props) {
                                 <div className="col-md-3">
                                     <div className="statistics">
                                     <h6 className="text-uppercase">Total Assets</h6>
-                                    <h2></h2>
+                                    <h2>{props.assetData.length}</h2>
                                     <p>Overall count of assets </p>
                                     </div>
                                 </div>
@@ -174,14 +154,16 @@ function Dashboard(props) {
                                 <h5 class="card-category">Overall assets</h5>
                             </div>
                             <div className="card-title">
-                                <h2>{arrayLength}</h2>
+                                <h2>{props.assetData.length}</h2>
                             </div>
                             <div className="dropdown">
                             </div>
                         </div>
                         <div className="card-body">
                             <div className="chart-area">
-                                <VerticleBar />
+                                {props &&
+                                    <VerticleBar assetData={props} />
+                                }
                             </div>
                         </div>
                         <div className="table-responsive">
@@ -219,7 +201,9 @@ function Dashboard(props) {
                         </div>
                         <div className="card-body">
                             <div className="chart-area">
-                                <DoughnutChart />
+                                {props && 
+                                <DoughnutChart assetData={props} />
+                                }
                             </div>
                         </div>
                     </div>
@@ -238,7 +222,9 @@ function Dashboard(props) {
                         </div>
                         <div className="card-body">
                             <div className="chart-area">
-                                <VerticleBar />
+                            {props &&
+                                    <VerticleBar assetData={props} />
+                                }
                             </div>
                         </div>
                         <div className="table-responsive">
