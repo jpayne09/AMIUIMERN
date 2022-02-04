@@ -4,7 +4,7 @@ import {baseUrl} from '../shared/baseUrl';
 export const fetchAssets = () => dispatch => {
 
     
-    return fetch(baseUrl + '/api/list')
+    return fetch(baseUrl + '/list')
         .then(response => {
             return response.json();
           })

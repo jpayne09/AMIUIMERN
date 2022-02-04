@@ -27,7 +27,7 @@ class AssetEntry extends React.Component {
     handleSubmit(event) {
       alert('A form was submitted ');
         
-      fetch(baseUrl + '/api/list', {
+      fetch(baseUrl + '/list', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

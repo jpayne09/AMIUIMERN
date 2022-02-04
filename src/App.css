@@ -59,6 +59,16 @@
   margin-left: 50px;
 }
 
+.header-top {
+  background-color: #313a46;
+}
+.header-items {
+  display: flex;
+  font-size: xx-large;
+}
+.header-item-show {
+  margin-right: 1200px;
+}
   hr {
     margin: 0;
     color: inherit;

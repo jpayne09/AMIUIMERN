@@ -6,13 +6,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.css';
 import 'bootstrap-social/bootstrap-social.css';
 import './index.css';
-import { authProvider} from './components/authProvider';
+ import { Auth0Provider } from '@auth0/auth0-react';
 
-
+const domain = 'dev-fezcc0wi.us.auth0.com';
+const clientId = 'TAwdvRaf5rTsPAZ1vmaM0aU6Z1vEbVj0';
 
 ReactDOM.render(
   <React.StrictMode>
-            <App  />
+    <Auth0Provider 
+      domain = {domain}
+      clientId = {clientId}
+      redirectUri = {window.location.origin}
+      >
+      <App  />
+  </Auth0Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
