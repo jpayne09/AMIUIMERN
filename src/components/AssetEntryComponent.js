@@ -10,6 +10,11 @@ class AssetEntry extends React.Component {
             serialnumber: '',
             modelinput: '',
             statusinput: '',
+            assetnameinput: '',
+            purchasedateinput:'',
+            supplierinput:'',
+            ordernumberinpiut:'',
+            purchasecostinput:'',
         };
   
       this.handleChange = this.handleChange.bind(this);
@@ -36,7 +41,12 @@ class AssetEntry extends React.Component {
             assettag: this.state.assettag,
             serialnumber: this.state.serialnumber,
             model : this.state.modelinput,
-            status: this.state.statusinput
+            status: this.state.statusinput,
+            assetname: this.state.assetnameinput,
+            purchasedate: this.state.purchasedateinput,
+            supplier: this.state.supplierinput,
+            ordernumber : this.state.ordernumberinpiut,
+            purchasecost : this.state.purchasecostinput,
         })
       })
 
@@ -49,35 +59,72 @@ class AssetEntry extends React.Component {
             <div className="container">
                 <div className="form-container">
                     <div className="row">
-                        <div className="col-md-12">
+                        <div className="col-sm-12">
                             <Form onSubmit={this.handleSubmit}>
-                            <FormGroup>
-                                <div className="form-group">
-                                <label>
-                                    Asset Tag:
-                                </label>
-                                <input type="text" name="assettag" value={this.state.assettag} onChange={this.handleChange} />
-                                </div>
-                                <div className="form-group">
+                                <FormGroup >
+                                  <label>
+                                      Asset Tag:
+                                  </label>
+                                  <div></div>
+                                  <Input className='mb-3' type="text" name="assettag" value={this.state.assettag} onChange={this.handleChange} />
+                                </FormGroup>
+                                <FormGroup>
                                 <label>
                                     SerialNumber:
-                                    <input type="text" name="serialnumber" value={this.state.serialnumber} onChange={this.handleChange} />
                                 </label>
-                                </div>
-                                <div className="form-group">
+                                <div></div>
+                                <Input className='mb-3' type="text" name="serialnumber" value={this.state.serialnumber} onChange={this.handleChange} />
+                                </FormGroup>
+                                <FormGroup>
                                   <label>
                                     Model:
                                   </label>
-                                  <input type="text" name="modelinput" value={this.state.modelinput} onChange={this.handleChange} />
-                                </div>
-                                <div className="form-group">
+                                  <div></div>
+                                  <Input className='mb-3' type="text" name="modelinput" value={this.state.modelinput} onChange={this.handleChange} />
+                                </FormGroup>
+                                <FormGroup>
                                   <label>
                                     Status:
-                                    <input type="text" name="statusinput" value={this.state.statusinput} onChange={this.handleChange} />
+                                    </label>
+                                    <div></div>
+                                    <Input className='mb-3' type="text" name="statusinput" value={this.state.statusinput} onChange={this.handleChange} />
+                                </FormGroup>
+                                <FormGroup>
+                                  <label>
+                                    Asset Name:
                                   </label>
-                                </div>
+                                  <div></div>
+                                  <Input className='mb-3' type="text" name="assetnameinput" value={this.state.assetnameinput} onChange={this.handleChange} />
+                                </FormGroup>
+                                <FormGroup>
+                                  <label>
+                                    Purchase Date:
+                                  </label>
+                                  <div></div>
+                                  <Input className='mb-3' type="text" name="purchasedateinput" value={this.state.purchasedateinput} onChange={this.handleChange} />
+                                </FormGroup>
+                                <FormGroup>
+                                  <label>
+                                    Supplier:
+                                  </label>
+                                  <div></div>
+                                  <Input className='mb-3' type="text" name="supplierinput" value={this.state.supplierinput} onChange={this.handleChange} />
+                                </FormGroup>
+                                <FormGroup>
+                                  <label>
+                                    OrderNumber
+                                  </label>
+                                  <div></div>
+                                  <Input className='mb-3' type="text" name="ordernumberinput" value={this.state.ordernumberinpiut} onChange={this.handleChange} />
+                                </FormGroup>
+                                <FormGroup>
+                                  <label>
+                                    Purchase Cost
+                                  </label>
+                                  <div></div>
+                                  <Input className='mb-3' type="text" name="purchasecostinput" value={this.state.purchasecostinput} onChange={this.handleChange} />
+                                </FormGroup>
                                 <input type="submit" value="Submit" />
-                            </FormGroup>
                             </Form>
                         </div>
                     </div>

@@ -9,8 +9,8 @@ function RenderInventory({ asset }) {
 
     return (
         <>
-        <td onClick={navigateTo}>{asset.assettag}</td><td>{asset.serialnumber}</td><td>{asset.model}</td><td>{asset.status}</td><td>{asset.AssetName}</td>
-            <td>{asset.Supplier}</td><td>{asset.OrderNum}</td><td>{asset.PurchaseDate}</td><td>{asset.PurchaseCost}</td>
+        <td onClick={navigateTo}>{asset.assettag}</td><td>{asset.serialnumber}</td><td>{asset.model}</td><td>{asset.status}</td><td>{asset.assetname}</td>
+            <td>{asset.supplier}</td><td>{asset.ordernum}</td><td>{asset.purchasedate}</td><td>{asset.purchasecost}</td>
         </>
     );
 }
@@ -26,7 +26,6 @@ class SearchBar extends React.Component {
         this.props.onFilterTextChange(e.target.value);
     }
     render() {
-      const filterText = this.props.filterText;  
       return (
           <main className="main">
               <div className="container">

@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import VerticleBar from './VerticleBarComponent';
 import DoughnutChart from './DoughnutComponent';
 
 function Dashboard(props) {
-
     return (
         //Body
         <main className="main" id="main">

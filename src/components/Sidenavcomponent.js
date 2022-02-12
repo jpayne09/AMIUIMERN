@@ -7,27 +7,29 @@ if(el){
 }
 //document.getElementById("myBtn").addEventListener("click", toggleNav);
 
-function toggleNav(){
+/* function toggleNav(){
     var navSize = document.getElementById("sidebarNavigation").style.width;
     if (navSize == 220) {
         return closeNav();
     }
     return openNav();
-}
+} */
 function closeNav() {
     document.getElementById("sidebarNavigation").style.width = "0";
     document.getElementById("main").style.paddingLeft = "20px";
     document.getElementById("navbar").style.marginLeft = "0";
-    document.getElementById("openNav").style.visibility = "visible";
-
+    //document.getElementById("openNav").style.visibility = "visible";
 }
 
-function openNav() {
+/* function openNav() {
     document.getElementById("sidebarNavigation").style.width = "200px";
     document.getElementById("main").style.paddingLeft = "220px";
     document.getElementById("navbar").style.marginLeft = "200px";
-    document.getElementById("openNav").style.visibility = "hidden";
-  }
+  } */
+
+  function toggleNav(){
+    return closeNav();
+}
 
 class Sidenav extends Component {
     
@@ -35,8 +37,9 @@ class Sidenav extends Component {
         return (
         <div className="page-wrapper">
                 <div className="sidebar" id="sidebarNavigation">
-                    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <span class="fs-12">AMI</span>
+                    <a className="d-flex align-items-center mb-5 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span className="fs-12">AMI</span>
+                    <button id="sideshow1" style={{paddingLeft: 100}} className="btn text-white" onClick={() => closeNav()}>X</button>
                     </a>
                     <hr></hr>
                     <NavLink className="nav-link" to="/dashboard">

@@ -8,21 +8,13 @@ import Contact from './Contactuscomponent';
 import { Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import { connect} from 'react-redux';
 import AssetInformation from './AssetInfoComponent';
-import {fetchAssets } from '../redux/ActionCreators';
+import Profile from './LoginComponents/Profile';
 
 const mapStateToProps = (state) => {
     return {
         assets: state.assets,
     };
 };
-
-/** 
-const mapDispatchToProps = {
-    fetchAssets: () => (fetchAssets()),
-
-};
-
-*/
 
 class Main extends Component {
 
@@ -51,6 +43,7 @@ class Main extends Component {
                     <Route exact path='/inventory' render={() => <FilterTable assetData={this.props.assets} filterText={this.props.filterText} /> } />
                     <Route path='/inventory/:assetwithId' component={assetwithId} />
                     <Route exact path='/contact' component={Contact} />
+                    <Route exact path='/profile' component={Profile} />
                     <Redirect to='dashboard' />
                 </Switch>
             </div>
